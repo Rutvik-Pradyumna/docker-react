@@ -1,0 +1,13 @@
+# superuser permission access
+sudo : required
+# telling travis we want docker so it installs 
+services : 
+  - docker
+
+# steps that need to occur before testing or deploying
+before_install :
+  - docker build -t pradyumnarutvik/docker-react -f Dockerfile.dev .
+
+# script section contains cmnds needed to test
+script : 
+  - docker run -e CI=true pradyumnarutvik/docker-react npm run test
