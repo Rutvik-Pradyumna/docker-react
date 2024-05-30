@@ -10,5 +10,7 @@ RUN npm run build
 # As we use FROM again, previous block(phase) is 
 # assumed as terminated or ended
 FROM nginx
+# for elasticbeanstalk port mapping
+EXPOSE 80
 # COPY - refer from dockerhub-nginx docs
 COPY --from=builder /app/build /usr/share/nginx/html
