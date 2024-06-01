@@ -1,5 +1,5 @@
 # We are naming this phase as builder phase
-# cus 2 phases - build and run phase
+# cuz 2 phases - build and run phase for production version
 FROM node:16-alpine as builder
 WORKDIR /app
 COPY package.json .
